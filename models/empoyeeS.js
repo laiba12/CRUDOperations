@@ -25,8 +25,8 @@ const employeeSchema = new mongoose.Schema(
         type:String,
         require:true,
         maxLength:50,
+        }
         
-               }
     }
 )
 

@@ -4,14 +4,16 @@ const router = express.Router()
 
 //import controller
 const createEmployee=require('../controllers/createEmployee')
-const getEmployee = require('../controllers/getEmployee')
-const getEmployeeById = require('../controllers/getEmployee')
+const getEmployeeById = require('../controllers/getEmployeeById')
+const getEmployees = require('../controllers/getEmployee')
 const updateEmployee = require('../controllers/updateEmployee')
 const deleteEmployee= require('../controllers/deleteEmployee')
+const reportsTo= require('../controllers/getEmployee')
 
 //define API routes
 router.post('/createEmployee',createEmployee)
-router.get('/getEmployee', getEmployee)
+router.get('/getEmployees', getEmployees)
+router.get('/manager/:reportsTo',reportsTo)
 router.get('/getEmployee/:id',  getEmployeeById)
 router.put('/updateEmployee/:id', updateEmployee)
 router.delete('/deleteEmployee/:id', deleteEmployee)

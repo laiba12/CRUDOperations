@@ -14,7 +14,7 @@ console.log('hey');
 const employeeRoutes= require('./routes/employee')
 
 //optional
-app.use('/api/v1', employeeRoutes)
+app.use('/api', employeeRoutes)
 
 app.listen(PORT,()=>{
     console.log(`server started at ${PORT}`);    

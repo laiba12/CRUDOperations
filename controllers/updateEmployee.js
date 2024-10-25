@@ -14,8 +14,7 @@
         res.status(200).json({
             success:true,
             data:updated,
-            message: "Employee data updated successfully",
-        
+            message: "Employee data updated successfully",        
         })
     
     }
