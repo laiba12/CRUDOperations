@@ -29,4 +29,4 @@ dbConnect();
 app.get('/', (req, res) => {
 res.send(`<h1> This is HomePage <h1>`)
 })
-
+module.exports= app;
