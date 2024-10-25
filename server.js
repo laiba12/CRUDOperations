@@ -16,6 +16,11 @@ const employeeRoutes= require('./routes/employee')
 //optional
 app.use('/api', employeeRoutes)
 
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong!');
+  });
+
 app.listen(PORT,()=>{
     console.log(`server started at ${PORT}`);    
 })
