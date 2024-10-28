@@ -8,8 +8,8 @@
        const {id} = req.params
        const {employeeID, role, name, joinedAt, reportsTo} = req.body;
 
-       const updated = await Employee.findByIdAndUpdate(
-        {_id:id}, 
+       const updated = await Employee.findOneAndUpdate(
+        {employeeID:id}, 
         {employeeID, role, name, joinedAt, reportsTo })
         res.status(200).json({
             success:true,

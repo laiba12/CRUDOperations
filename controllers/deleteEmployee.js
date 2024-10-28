@@ -5,7 +5,7 @@
   const deleteEmployee=async(req, res)=>{
     try{
        const {id} = req.params
-       const employee = await Employee.findByIdAndDelete({_id:id})
+       const employee = await Employee.findOneAndDelete({employeeID:id})
        if(!employee){
         return res.status(404).json(
         {

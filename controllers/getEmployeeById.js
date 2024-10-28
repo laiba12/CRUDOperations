@@ -3,8 +3,8 @@
 
 const getEmployeeById=async(req, res)=>{
     try{
-       const id = req.params.id;
-       const  employee=await Employee.findById({_id: id})
+       const {id} = req.params;
+       const  employee=await Employee.findOne({employeeID: id})
   
        //if data is not found
        if(!employee){
