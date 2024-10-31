@@ -29,5 +29,7 @@ const getEmployeesByManager=async(req, res)=>{
        )
       }
   } 
+
+  //get employee by their reporting manager
   
   module.exports=getEmployeesByManager
