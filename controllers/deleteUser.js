@@ -1,21 +1,21 @@
   //importing model
-  const Employee=require('../models/empoyeeS')
+  const User=require('../models/userModel')
 
   //defining route handler
-  const deleteEmployee=async(req, res)=>{
+  const deleteUser=async(req, res)=>{
     try{
        const {id} = req.params
-       const employee = await Employee.findOneAndDelete({employeeID:id})
-       if(!employee){
+       const user = await User.findOneAndDelete({userId:id})
+       if(!user){
         return res.status(404).json(
         {
             success:false,
-            message: 'Employee not found'})
+            message: 'User not found'})
        }
        res.status(200).json(
         {
             success:true,
-            message: 'Employee deleted successfully'
+            message: 'User deleted successfully'
         })
     }
     catch(err){
@@ -30,4 +30,4 @@
     }
   }
 
- module.exports=deleteEmployee
+ module.exports=deleteUser

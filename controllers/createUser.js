@@ -1,13 +1,13 @@
   //importing model
-const Employee=require('../models/empoyeeS')
+const User=require('../models/userModel')
 
   //defining route handler
-  const createEmployee=async(req, res)=>{
+  const createUser=async(req, res)=>{
     try{
         //emplyee details extraction
-        const {employeeID, role, name, joinedAt, reportsTo} = req.body;
+        const {userId, email, name, phone, city} = req.body;
         //creating a new employee
-        const response = await Employee.create({employeeID, role, name, joinedAt, reportsTo})
+        const response = await User.create({userId, email, name, phone, city})
         //returning response
         res.status(200).json(
             {
@@ -31,4 +31,4 @@ const Employee=require('../models/empoyeeS')
     }
   }
 
- module.exports=createEmployee
+ module.exports=createUser

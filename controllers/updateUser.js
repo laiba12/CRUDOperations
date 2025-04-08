@@ -1,20 +1,20 @@
   //importing model
-  const Employee=require('../models/empoyeeS')
+  const User=require('../models/userModel')
 
   //defining route handler
-  const updateEmployee=async(req, res)=>{
+  const updateUser=async(req, res)=>{
     try{
        //another way of fetching id
        const {id} = req.params
-       const {employeeID, role, name, joinedAt, reportsTo} = req.body;
+       const {userId, email, name, phone, city} = req.body;
 
-       const updated = await Employee.findOneAndUpdate(
-        {employeeID:id}, 
-        {employeeID, role, name, joinedAt, reportsTo })
+       const updated = await User.findOneAndUpdate(
+        {userId:id}, 
+        {userId, email, name, phone, city })
         res.status(200).json({
             success:true,
             data:updated,
-            message: "Employee data updated successfully",        
+            message: "User data updated successfully",        
         })
     
     }
@@ -30,4 +30,4 @@
     }
   }
 
- module.exports=updateEmployee
+ module.exports=updateUser

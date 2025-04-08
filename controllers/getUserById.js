@@ -1,13 +1,13 @@
   //importing model
-  const Employee=require('../models/empoyeeS')
+  const User=require('../models/userModel')
 
-const getEmployeeById=async(req, res)=>{
+const getUserById=async(req, res)=>{
     try{
        const {id} = req.params;
-       const  employee=await Employee.findOne({employeeID: id})
+       const  user=await User.findOne({userID: id})
   
        //if data is not found
-       if(!employee){
+       if(!user){
         return res.status(404).json({
           success:false,
           message:'no data found with given id',
@@ -15,8 +15,8 @@ const getEmployeeById=async(req, res)=>{
           }
         res.status(200).json({
         success:true,
-        data:employee,
-        message:'Employee data fetched successfully'
+        data:user,
+        message:'User data fetched successfully'
         })
   
        }
@@ -31,4 +31,4 @@ const getEmployeeById=async(req, res)=>{
        }
   } 
   
-  module.exports=getEmployeeById
+  module.exports=getUserById

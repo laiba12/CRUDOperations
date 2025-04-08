@@ -8,13 +8,11 @@ const PORT = process.env.PORT || 4000
 //middleware to parse/fetch json data from the request body
 app.use(express.json())
 
-console.log('hey');
-
 //importing routes
-const employeeRoutes= require('./routes/employee')
+const userRoutes= require('./routes/userRoute')
 
 //optional
-app.use('/api', employeeRoutes)
+app.use('/api', userRoutes)
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
